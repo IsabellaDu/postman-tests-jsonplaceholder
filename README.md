@@ -33,13 +33,13 @@ We're using the JSON Placeholder API ([https://jsonplaceholder.typicode.com/](ht
 ## Screenshots of Test Results
 
 1. A screenshot of the result of the "Get all posts" test:
-![Get all posts](https://imgur.com/a/mZfbWnu "Get all posts")
+![Get all posts](https://i.ibb.co/QcrdK2w/Screenshot-2023-06-20-at-16-09-37.png)
 
 2. A screenshot of the result of the "Create a new post" test:
-![Create a new post](https://imgur.com/a/qU1VlKb "Create a new post")
+![Create a new post](https://i.ibb.co/r7g8GL0/Screenshot-2023-06-20-at-16-09-57.png)
 
 3. A screenshot of the result of the "Update a post" test.
-![Update a post](https://imgur.com/a/saFyzZY "Update a post")
+![Update a post](https://i.ibb.co/z7m7TD8/Screenshot-2023-06-20-at-16-10-12.png)
 
 4. A screenshot of the result of the "Delete a post" test.
-![Delete a post](https://imgur.com/a/5IzO931 "Delete a post")
+![Delete a post](https://i.ibb.co/9ck2NkY/Screenshot-2023-06-20-at-16-10-29.png)
