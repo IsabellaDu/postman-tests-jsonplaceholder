@@ -115,7 +115,12 @@
 							"",
 							"pm.test(\"Check responce has JSON body\", function(){",
 							"    pm.response.to.have.jsonBody();",
-							"})"
+							"})",
+							"",
+							"pm.test(\"value of name field is 'updated name of the board'\",function () {",
+							"    var jsonData = pm.response.json();",
+							"    pm.expect(jsonData.name).to.eql(\"updated name of the board\");",
+							"});"
 						],
 						"type": "text/javascript"
 					}
