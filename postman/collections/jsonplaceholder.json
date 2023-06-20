@@ -1,0 +1,246 @@
+{
+	"info": {
+		"_postman_id": "ade282a9-9fc8-4e7c-b8f0-4bdefb1bb29a",
+		"name": "jsonplaceholder",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_uid": "24727779-ade282a9-9fc8-4e7c-b8f0-4bdefb1bb29a"
+	},
+	"item": [
+		{
+			"name": "Get all member's posts",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"id": "4f954440-794a-455b-b28d-96fa8d434070",
+						"exec": [
+							"pm.test(\"Check status code\", function(){",
+							"    pm.response.to.have.status(200);",
+							"})",
+							"",
+							"pm.test(\"Check responce has JSON body\", function(){",
+							"    pm.response.to.have.jsonBody();",
+							"})"
+						],
+						"type": "text/javascript"
+					}
+				}
+			],
+			"id": "0a724efe-a423-4015-8ba6-2f78978e979b",
+			"protocolProfileBehavior": {
+				"disableBodyPruning": true
+			},
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "{{jsonplaceholder_prod}}",
+					"host": [
+						"{{jsonplaceholder_prod}}"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Create a new Post",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"id": "39933141-9b2e-40a4-98be-b63e524689b0",
+						"exec": [
+							"pm.test(\"Check status code\", function(){",
+							"    pm.response.to.have.status(201);",
+							"})",
+							"",
+							"pm.test(\"Check responce has JSON body\", function(){",
+							"    pm.response.to.have.jsonBody();",
+							"})",
+							"",
+							"var response = pm.response.json();",
+							"pm.environment.set(\"idOFCreatedPost\", response.id);"
+						],
+						"type": "text/javascript"
+					}
+				}
+			],
+			"id": "cf4fc52c-3ad9-46de-98be-10591396194a",
+			"protocolProfileBehavior": {
+				"disableBodyPruning": true
+			},
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "Content-type",
+						"value": "application/json; charset=UTF-8",
+						"type": "text"
+					}
+				],
+				"url": {
+					"raw": "{{jsonplaceholder_prod}}?title=test-title&body=test-body&userId={{userId}}",
+					"host": [
+						"{{jsonplaceholder_prod}}"
+					],
+					"query": [
+						{
+							"key": "title",
+							"value": "test-title"
+						},
+						{
+							"key": "body",
+							"value": "test-body"
+						},
+						{
+							"key": "userId",
+							"value": "{{userId}}"
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Update a Post",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"id": "68900efa-ff42-427a-9ca1-03fd864ba454",
+						"exec": [
+							"pm.test(\"Check status code\", function(){",
+							"    pm.response.to.have.status(200);",
+							"})",
+							"",
+							"pm.test(\"Check responce has JSON body\", function(){",
+							"    pm.response.to.have.jsonBody();",
+							"})"
+						],
+						"type": "text/javascript"
+					}
+				}
+			],
+			"id": "4c7c121b-faaa-4896-b1f5-c87890f0000a",
+			"protocolProfileBehavior": {
+				"disableBodyPruning": true,
+				"disabledSystemHeaders": {
+					"content-type": true
+				}
+			},
+			"request": {
+				"method": "PUT",
+				"header": [
+					{
+						"key": "Content-Type",
+						"value": "application/json",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n    \"name\": \"updated name of the board\"\n}"
+				},
+				"url": {
+					"raw": "{{jsonplaceholder_prod}}/1/?id={{idOFCreatedPost}}&title=newTitle&body=newBody&userId={{userId}}",
+					"host": [
+						"{{jsonplaceholder_prod}}"
+					],
+					"path": [
+						"1",
+						""
+					],
+					"query": [
+						{
+							"key": "id",
+							"value": "{{idOFCreatedPost}}"
+						},
+						{
+							"key": "title",
+							"value": "newTitle"
+						},
+						{
+							"key": "body",
+							"value": "newBody"
+						},
+						{
+							"key": "userId",
+							"value": "{{userId}}"
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "DELETE a Post",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"id": "a851db34-9c23-482d-a7b0-c107b977783b",
+						"exec": [
+							"pm.test(\"Check status code\", function(){",
+							"    pm.response.to.have.status(200);",
+							"})",
+							"",
+							"pm.test(\"Check responce has JSON body\", function(){",
+							"    pm.response.to.have.jsonBody();",
+							"})"
+						],
+						"type": "text/javascript"
+					}
+				}
+			],
+			"id": "ffd03164-c2f1-4583-acb9-95dc1f7d682f",
+			"protocolProfileBehavior": {
+				"disableBodyPruning": true
+			},
+			"request": {
+				"method": "DELETE",
+				"header": [],
+				"url": {
+					"raw": "{{jsonplaceholder_prod}}/1/",
+					"host": [
+						"{{jsonplaceholder_prod}}"
+					],
+					"path": [
+						"1",
+						""
+					]
+				}
+			},
+			"response": []
+		}
+	],
+	"event": [
+		{
+			"listen": "prerequest",
+			"script": {
+				"id": "edf4c279-a452-45a5-8e86-ac961be7d332",
+				"type": "text/javascript",
+				"exec": [
+					""
+				]
+			}
+		},
+		{
+			"listen": "test",
+			"script": {
+				"id": "7a44f82e-1b95-4ded-b051-e9235a8e3915",
+				"type": "text/javascript",
+				"exec": [
+					""
+				]
+			}
+		}
+	],
+	"variable": [
+		{
+			"id": "e201356c-ce7a-41b0-b38d-61e088fb4db5",
+			"key": "userId",
+			"value": "",
+			"type": "string"
+		}
+	]
+}
