@@ -32,9 +32,14 @@ We're using the JSON Placeholder API ([https://jsonplaceholder.typicode.com/](ht
 
 ## Screenshots of Test Results
 
-Please see the `/screenshots` directory for images of the test results. These include:
+1. A screenshot of the result of the "Get all posts" test:
+![Get all posts](https://imgur.com/a/mZfbWnu "Get all posts")
 
-1. `https://imgur.com/a/mZfbWnu` - a screenshot of the result of the "Get all posts" test.
-2. `https://imgur.com/a/qU1VlKb` - a screenshot of the result of the "Create a new post" test.
-3. `https://imgur.com/a/saFyzZY` - a screenshot of the result of the "Update a post" test.
-4. `https://imgur.com/a/5IzO931` - a screenshot of the result of the "Delete a post" test.
+2. A screenshot of the result of the "Create a new post" test:
+![Create a new post](https://imgur.com/a/qU1VlKb "Create a new post")
+
+3. A screenshot of the result of the "Update a post" test.
+![Update a post](https://imgur.com/a/saFyzZY "Update a post")
+
+4. A screenshot of the result of the "Delete a post" test.
+![Delete a post](https://imgur.com/a/5IzO931 "Delete a post")
